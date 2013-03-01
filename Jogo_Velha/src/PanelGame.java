@@ -126,19 +126,20 @@ public class PanelGame extends JFrame implements ActionListener {
 				}
 			}
 			message = "Velha.";
-			for(a=0;a<3;a++)
+			for(a=0;a<3;a++){
 				if((grid.getSelection()[a][0]==grid.getSelection()[a][1]&&grid.getSelection()[a][0]==grid.getSelection()[a][2]&&grid.getSelection()[a][0]!="") ||
 					(grid.getSelection()[0][a]==grid.getSelection()[1][a]&&grid.getSelection()[0][a]==grid.getSelection()[2][a]&&grid.getSelection()[0][a]!="") ||
 					(grid.getSelection()[0][0]==grid.getSelection()[1][1]&&grid.getSelection()[0][0]==grid.getSelection()[2][2]&&grid.getSelection()[0][0]!="") ||
 					(grid.getSelection()[0][2]==grid.getSelection()[1][1]&&grid.getSelection()[1][1]==grid.getSelection()[2][0]&&grid.getSelection()[2][0]!="")) {
-				end = true;
-				if(player){
-					message = "Jogador 1 venceu.";
+					end = true;
+					if(player){
+						message = "Jogador 1 venceu.";
+					}
+					else{
+						message = "Jogador 2 venceu.";
+					}
 				}
-				else
-					message = "Jogador 2 venceu.";
-				}
-			
+			}
 			if(end){
 				JOptionPane.showMessageDialog(null, "Fim de Jogo: " + message);
 			}
