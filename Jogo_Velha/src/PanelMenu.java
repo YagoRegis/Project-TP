@@ -29,9 +29,13 @@ public class PanelMenu extends JPanel implements ActionListener {
 		if(origem.equals(newGame)) {
 			game.setSize(300,300);
 			game.setVisible(true);
+		}else{
+			if(origem.equals(exit)){
+					System.exit(ABORT);
+			}else{
+					//default
+			}
 		}
-		if(origem.equals(exit))
-			System.exit(ABORT);
 	}
 
 }
