@@ -99,10 +99,12 @@ public class PanelGame extends JFrame implements ActionListener {
 			position[0] = 2; position[1] = 2;
 		}
 			
-			if(player)
+			if(player){
 				grid.setSelection("X", position);
-			else
+			}
+			else{
 				grid.setSelection("O", position);
+			}
 			
 			cell11.setText(grid.getSelection()[0][0]);
 			cell12.setText(grid.getSelection()[0][1]);
@@ -116,11 +118,13 @@ public class PanelGame extends JFrame implements ActionListener {
 
 			int a,b;
 			end = true;
-			for(a=0;a<3;a++)
-				for(b=0;b<3;b++)
+			for(a=0;a<3;a++){
+				for(b=0;b<3;b++){
 					if(grid.getSelection()[a][b]=="") {
 						end = false;
 					}
+				}
+			}
 			message = "Velha.";
 			for(a=0;a<3;a++)
 				if((grid.getSelection()[a][0]==grid.getSelection()[a][1]&&grid.getSelection()[a][0]==grid.getSelection()[a][2]&&grid.getSelection()[a][0]!="") ||
@@ -128,16 +132,19 @@ public class PanelGame extends JFrame implements ActionListener {
 					(grid.getSelection()[0][0]==grid.getSelection()[1][1]&&grid.getSelection()[0][0]==grid.getSelection()[2][2]&&grid.getSelection()[0][0]!="") ||
 					(grid.getSelection()[0][2]==grid.getSelection()[1][1]&&grid.getSelection()[1][1]==grid.getSelection()[2][0]&&grid.getSelection()[2][0]!="")) {
 				end = true;
-				if(player)
+				if(player){
 					message = "Jogador 1 venceu.";
+				}
 				else
 					message = "Jogador 2 venceu.";
 				}
 			
-			if(end)
+			if(end){
 				JOptionPane.showMessageDialog(null, "Fim de Jogo: " + message);
-			if(end)
+			}
+			if(end){
 				this.setVisible(false);
+			}
 			
 			player = !player;
 	}
