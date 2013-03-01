@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 @SuppressWarnings("serial")
 public class PanelGame extends JFrame implements ActionListener {
 	
-	private boolean jogador = true;
+	private boolean player = true;
 	private int position[] = {0,0};
 	private JButton cell11;
 	private JButton cell12;
@@ -22,7 +22,7 @@ public class PanelGame extends JFrame implements ActionListener {
 	private JButton cell32;
 	private JButton cell33;
 	private Grid1 grid = new Grid1();
-	private boolean fim = false;
+	private boolean end = false;
 	private String message = "";
 		
 	public PanelGame() {
@@ -99,7 +99,7 @@ public class PanelGame extends JFrame implements ActionListener {
 			position[0] = 2; position[1] = 2;
 		}
 			
-			if(jogador)
+			if(player)
 				grid.setSelection("X", position);
 			else
 				grid.setSelection("O", position);
@@ -115,11 +115,11 @@ public class PanelGame extends JFrame implements ActionListener {
 			cell33.setText(grid.getSelection()[2][2]);
 
 			int a,b;
-			fim = true;
+			end = true;
 			for(a=0;a<3;a++)
 				for(b=0;b<3;b++)
 					if(grid.getSelection()[a][b]=="") {
-						fim = false;
+						end = false;
 					}
 			message = "Velha.";
 			for(a=0;a<3;a++)
@@ -127,19 +127,19 @@ public class PanelGame extends JFrame implements ActionListener {
 					(grid.getSelection()[0][a]==grid.getSelection()[1][a]&&grid.getSelection()[0][a]==grid.getSelection()[2][a]&&grid.getSelection()[0][a]!="") ||
 					(grid.getSelection()[0][0]==grid.getSelection()[1][1]&&grid.getSelection()[0][0]==grid.getSelection()[2][2]&&grid.getSelection()[0][0]!="") ||
 					(grid.getSelection()[0][2]==grid.getSelection()[1][1]&&grid.getSelection()[1][1]==grid.getSelection()[2][2]&&grid.getSelection()[2][0]!="")) {
-				fim = true;
-				if(jogador)
+				end = true;
+				if(player)
 					message = "Jogador 1 venceu.";
 				else
 					message = "Jogador 2 venceu.";
 				}
 			
-			if(fim)
+			if(end)
 				JOptionPane.showMessageDialog(null, "Fim de Jogo: " + message);
-			if(fim)
+			if(end)
 				this.setVisible(false);
 			
-			jogador = !jogador;
+			player = !player;
 	}
 
 }
