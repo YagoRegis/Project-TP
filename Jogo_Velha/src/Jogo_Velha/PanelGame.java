@@ -66,37 +66,64 @@ public class PanelGame extends JFrame implements ActionListener {
 			cell11.setEnabled(false);
 			position[0] = 0; position[1] = 0;
 		}
+		else{
+			//Default
+		}
 		if(origem.equals(cell12)) {
 			cell12.setEnabled(false);
 			position[0] = 0; position[1] = 1;
+		}
+		else{
+			//Default
 		}
 		if(origem.equals(cell13)) {
 			cell13.setEnabled(false);
 			position[0] = 0; position[1] = 2;
 		}
+		else{
+			//Default
+		}
 		if(origem.equals(cell21)) {
 			cell21.setEnabled(false);
 			position[0] = 1; position[1] = 0;
+		}
+		else{
+			//Default
 		}
 		if(origem.equals(cell22)) {
 			cell22.setEnabled(false);
 			position[0] = 1; position[1] = 1;
 		}
+		else{
+			//Default
+		}
 		if(origem.equals(cell23)) {
 			cell23.setEnabled(false);
 			position[0] = 1; position[1] = 2;
+		}
+		else{
+			//Default
 		}
 		if(origem.equals(cell31)) {
 			cell31.setEnabled(false);
 			position[0] = 2; position[1] = 0;
 		}
+		else{
+			//Default
+		}
 		if(origem.equals(cell32)) {
 			cell32.setEnabled(false);
 			position[0] = 2; position[1] = 1;
 		}
+		else{
+			//Default
+		}
 		if(origem.equals(cell33)) {
 			cell33.setEnabled(false);
 			position[0] = 2; position[1] = 2;
+		}
+		else{
+			//Default
 		}
 			
 			if(player){
