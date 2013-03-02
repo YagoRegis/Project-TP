@@ -156,7 +156,7 @@ public class PanelGame extends JFrame implements ActionListener {
 				}
 			}
 		}
-		message = "Tic Tac Toe.";
+		message = "Draw.";
 		
 		for(line=0;line<3;line++){
 			//Detects if the game is over
