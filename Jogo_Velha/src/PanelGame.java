@@ -147,6 +147,9 @@ public class PanelGame extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Fim de Jogo: " + message);
 				this.setVisible(false);
 			}
+			else{
+				//default
+			}
 			
 			player = !player;
 	}

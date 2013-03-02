@@ -1,5 +1,4 @@
 
-
 public class Grid1 {
 	
 	private String selection[][];
@@ -19,5 +18,4 @@ public class Grid1 {
 		this.selection = grid;
 		}
 
-	
 }
