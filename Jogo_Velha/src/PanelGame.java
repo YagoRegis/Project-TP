@@ -142,7 +142,11 @@ public class PanelGame extends JFrame implements ActionListener {
 						message = "Jogador 2 venceu.";
 					}
 				}
+				else{
+					//default
+				}
 			}
+			
 			if(end){
 				JOptionPane.showMessageDialog(null, "Fim de Jogo: " + message);
 				this.setVisible(false);
