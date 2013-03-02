@@ -123,6 +123,9 @@ public class PanelGame extends JFrame implements ActionListener {
 					if(grid.getSelection()[a][b]=="") {
 						end = false;
 					}
+					else{
+						//default
+					}
 				}
 			}
 			message = "Velha.";
