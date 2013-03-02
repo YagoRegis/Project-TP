@@ -143,11 +143,11 @@ public class PanelGame extends JFrame implements ActionListener {
 		cell32.setText(grid.getSelection()[2][1]);
 		cell33.setText(grid.getSelection()[2][2]);
 
-		int a,b;
+		int line,column;
 		end = true;
-		for(a=0;a<3;a++){
-			for(b=0;b<3;b++){
-				if(grid.getSelection()[a][b]=="") {
+		for(line=0;line<3;line++){
+			for(column=0;column<3;column++){
+				if(grid.getSelection()[line][column]=="") {
 					end = false;
 				}
 				else{
@@ -157,9 +157,9 @@ public class PanelGame extends JFrame implements ActionListener {
 		}
 		message = "Tic Tac Toe.";
 		
-		for(a=0;a<3;a++){
-			if((grid.getSelection()[a][0]==grid.getSelection()[a][1]&&grid.getSelection()[a][0]==grid.getSelection()[a][2]&&grid.getSelection()[a][0]!="") ||
-				(grid.getSelection()[0][a]==grid.getSelection()[1][a]&&grid.getSelection()[0][a]==grid.getSelection()[2][a]&&grid.getSelection()[0][a]!="") ||
+		for(line=0;line<3;line++){
+			if((grid.getSelection()[line][0]==grid.getSelection()[line][1]&&grid.getSelection()[line][0]==grid.getSelection()[line][2]&&grid.getSelection()[line][0]!="") ||
+				(grid.getSelection()[0][line]==grid.getSelection()[1][line]&&grid.getSelection()[0][line]==grid.getSelection()[2][line]&&grid.getSelection()[0][line]!="") ||
 				(grid.getSelection()[0][0]==grid.getSelection()[1][1]&&grid.getSelection()[0][0]==grid.getSelection()[2][2]&&grid.getSelection()[0][0]!="") ||
 				(grid.getSelection()[0][2]==grid.getSelection()[1][1]&&grid.getSelection()[1][1]==grid.getSelection()[2][0]&&grid.getSelection()[2][0]!="")) {
 				end = true;

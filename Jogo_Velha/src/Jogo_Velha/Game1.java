@@ -9,7 +9,7 @@ public class Game1 extends JFrame{
 	
 	final static String GAME = "Game";
 	
-	public Game1() {
+	public Game1(){
 		super("Jogo da Velha");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
