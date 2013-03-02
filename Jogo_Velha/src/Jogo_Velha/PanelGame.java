@@ -143,6 +143,7 @@ public class PanelGame extends JFrame implements ActionListener {
 		cell32.setText(grid.getSelection()[2][1]);
 		cell33.setText(grid.getSelection()[2][2]);
 
+		//Detects if there is a draw
 		int line,column;
 		end = true;
 		for(line=0;line<3;line++){
@@ -158,6 +159,7 @@ public class PanelGame extends JFrame implements ActionListener {
 		message = "Tic Tac Toe.";
 		
 		for(line=0;line<3;line++){
+			//Detects if the game is over
 			if((grid.getSelection()[line][0]==grid.getSelection()[line][1]&&grid.getSelection()[line][0]==grid.getSelection()[line][2]&&grid.getSelection()[line][0]!="") ||
 				(grid.getSelection()[0][line]==grid.getSelection()[1][line]&&grid.getSelection()[0][line]==grid.getSelection()[2][line]&&grid.getSelection()[0][line]!="") ||
 				(grid.getSelection()[0][0]==grid.getSelection()[1][1]&&grid.getSelection()[0][0]==grid.getSelection()[2][2]&&grid.getSelection()[0][0]!="") ||
@@ -184,7 +186,7 @@ public class PanelGame extends JFrame implements ActionListener {
 		else{
 			//default
 		}
-			
+		//Swap turns
 		player = !player;
 	}
 }
