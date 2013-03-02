@@ -155,7 +155,7 @@ public class PanelGame extends JFrame implements ActionListener {
 					}
 				}
 			}
-			message = "Velha.";
+			message = "Tic Tac Toe.";
 			for(a=0;a<3;a++){
 				if((grid.getSelection()[a][0]==grid.getSelection()[a][1]&&grid.getSelection()[a][0]==grid.getSelection()[a][2]&&grid.getSelection()[a][0]!="") ||
 					(grid.getSelection()[0][a]==grid.getSelection()[1][a]&&grid.getSelection()[0][a]==grid.getSelection()[2][a]&&grid.getSelection()[0][a]!="") ||
@@ -163,10 +163,10 @@ public class PanelGame extends JFrame implements ActionListener {
 					(grid.getSelection()[0][2]==grid.getSelection()[1][1]&&grid.getSelection()[1][1]==grid.getSelection()[2][0]&&grid.getSelection()[2][0]!="")) {
 					end = true;
 					if(player){
-						message = "Jogador 1 venceu.";
+						message = "Payer 1 won.";
 					}
 					else{
-						message = "Jogador 2 venceu.";
+						message = "Player 2 won.";
 					}
 				}
 				else{
@@ -175,7 +175,7 @@ public class PanelGame extends JFrame implements ActionListener {
 			}
 			
 			if(end){
-				JOptionPane.showMessageDialog(null, "Fim de Jogo: " + message);
+				JOptionPane.showMessageDialog(null, "End of game: " + message);
 				this.setVisible(false);
 			}
 			else{
