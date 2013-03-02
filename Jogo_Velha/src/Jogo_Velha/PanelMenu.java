@@ -26,6 +26,7 @@ public class PanelMenu extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		Object origem = event.getSource();
 		JFrame game = new PanelGame();
+		
 		if(origem.equals(newGame)) {
 			game.setSize(300,300);
 			game.setVisible(true);

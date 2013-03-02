@@ -126,63 +126,65 @@ public class PanelGame extends JFrame implements ActionListener {
 			//Default
 		}
 			
-			if(player){
-				grid.setSelection("X", position);
-			}
-			else{
-				grid.setSelection("O", position);
-			}
+		if(player){
+			grid.setSelection("X", position);
+		}
+		else{
+			grid.setSelection("O", position);
+		}
 			
-			cell11.setText(grid.getSelection()[0][0]);
-			cell12.setText(grid.getSelection()[0][1]);
-			cell13.setText(grid.getSelection()[0][2]);
-			cell21.setText(grid.getSelection()[1][0]);
-			cell22.setText(grid.getSelection()[1][1]);
-			cell23.setText(grid.getSelection()[1][2]);
-			cell31.setText(grid.getSelection()[2][0]);
-			cell32.setText(grid.getSelection()[2][1]);
-			cell33.setText(grid.getSelection()[2][2]);
+		cell11.setText(grid.getSelection()[0][0]);
+		cell12.setText(grid.getSelection()[0][1]);
+		cell13.setText(grid.getSelection()[0][2]);
+		cell21.setText(grid.getSelection()[1][0]);
+		cell22.setText(grid.getSelection()[1][1]);
+		cell23.setText(grid.getSelection()[1][2]);
+		cell31.setText(grid.getSelection()[2][0]);
+		cell32.setText(grid.getSelection()[2][1]);
+		cell33.setText(grid.getSelection()[2][2]);
 
-			int a,b;
-			end = true;
-			for(a=0;a<3;a++){
-				for(b=0;b<3;b++){
-					if(grid.getSelection()[a][b]=="") {
-						end = false;
-					}
-					else{
-						//default
-					}
-				}
-			}
-			message = "Tic Tac Toe.";
-			for(a=0;a<3;a++){
-				if((grid.getSelection()[a][0]==grid.getSelection()[a][1]&&grid.getSelection()[a][0]==grid.getSelection()[a][2]&&grid.getSelection()[a][0]!="") ||
-					(grid.getSelection()[0][a]==grid.getSelection()[1][a]&&grid.getSelection()[0][a]==grid.getSelection()[2][a]&&grid.getSelection()[0][a]!="") ||
-					(grid.getSelection()[0][0]==grid.getSelection()[1][1]&&grid.getSelection()[0][0]==grid.getSelection()[2][2]&&grid.getSelection()[0][0]!="") ||
-					(grid.getSelection()[0][2]==grid.getSelection()[1][1]&&grid.getSelection()[1][1]==grid.getSelection()[2][0]&&grid.getSelection()[2][0]!="")) {
-					end = true;
-					if(player){
-						message = "Payer 1 won.";
-					}
-					else{
-						message = "Player 2 won.";
-					}
+		int a,b;
+		end = true;
+		for(a=0;a<3;a++){
+			for(b=0;b<3;b++){
+				if(grid.getSelection()[a][b]=="") {
+					end = false;
 				}
 				else{
 					//default
 				}
 			}
-			
-			if(end){
-				JOptionPane.showMessageDialog(null, "End of game: " + message);
-				this.setVisible(false);
+		}
+		message = "Tic Tac Toe.";
+		
+		for(a=0;a<3;a++){
+			if((grid.getSelection()[a][0]==grid.getSelection()[a][1]&&grid.getSelection()[a][0]==grid.getSelection()[a][2]&&grid.getSelection()[a][0]!="") ||
+				(grid.getSelection()[0][a]==grid.getSelection()[1][a]&&grid.getSelection()[0][a]==grid.getSelection()[2][a]&&grid.getSelection()[0][a]!="") ||
+				(grid.getSelection()[0][0]==grid.getSelection()[1][1]&&grid.getSelection()[0][0]==grid.getSelection()[2][2]&&grid.getSelection()[0][0]!="") ||
+				(grid.getSelection()[0][2]==grid.getSelection()[1][1]&&grid.getSelection()[1][1]==grid.getSelection()[2][0]&&grid.getSelection()[2][0]!="")) {
+				end = true;
+				
+				if(player){
+					message = "Payer 1 won.";
+				}
+				else{
+					message = "Player 2 won.";
+				}
+				
 			}
 			else{
 				//default
 			}
+		}
 			
-			player = !player;
+		if(end){
+			JOptionPane.showMessageDialog(null, "End of game: " + message);
+			this.setVisible(false);
+		}
+		else{
+			//default
+		}
+			
+		player = !player;
 	}
-
 }

@@ -7,6 +7,7 @@ public class Grid1 {
 	public String[][] getSelection() {
 		return selection;
 	}
+	
 	public void setSelection(String selection, int position[]) {
 		this.selection[position[0]][position[1]] = selection;
 	}
@@ -18,5 +19,4 @@ public class Grid1 {
 						   {"","",""}};
 		this.selection = grid;
 		}
-
 }
