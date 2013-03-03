@@ -1,3 +1,6 @@
+/**
+ * This is the program to test the game
+ */
 package Jogo_Velha;
 
 import java.awt.*;
@@ -10,7 +13,7 @@ public class Game1 extends JFrame{
 	final static String GAME = "Game";
 	
 	public Game1(){
-		super("Jogo da Velha");
+		super("Tic Tac Toe");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         /*
@@ -28,8 +31,9 @@ public class Game1 extends JFrame{
 	}
 
 	public static void main(String[] args) {
+		int ScreenSize = 300;
 		Game1 telaPrincipal = new Game1();
-		telaPrincipal.setSize(300,200);
+		telaPrincipal.setSize(ScreenSize,ScreenSize);
 		telaPrincipal.setVisible(true);
 
 	}

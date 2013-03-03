@@ -1,17 +1,21 @@
+/**
+ * This program aims to create the logical part of the game and also its graphics part
+ * 
+ */
+
 package Jogo_Velha;
 
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import java.awt.event.*;
+import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class PanelGame extends JFrame implements ActionListener {
 	
 	private boolean player = true;
 	private int position[] = {0,0};
+	
+	//Variables of the grid that appears on the screen, each with its position in the matrix  
 	private JButton cell11;
 	private JButton cell12;
 	private JButton cell13;
@@ -21,6 +25,7 @@ public class PanelGame extends JFrame implements ActionListener {
 	private JButton cell31;
 	private JButton cell32;
 	private JButton cell33;
+	
 	private Grid1 grid = new Grid1();
 	private boolean end = false;
 	private String message = "";
@@ -38,6 +43,7 @@ public class PanelGame extends JFrame implements ActionListener {
 		cell32 = new JButton(grid.getSelection()[2][1]);
 		cell33 = new JButton(grid.getSelection()[2][2]);
 		
+		//Adding cells to the GridLayout
 		this.add(cell11);
 		this.add(cell12);
 		this.add(cell13);
@@ -58,7 +64,8 @@ public class PanelGame extends JFrame implements ActionListener {
 		cell32.addActionListener(this);
 		cell33.addActionListener(this);
 	}
-
+	
+	//Here is the logical part and the action buttons of the Grid(Enabled or not)
 	public void actionPerformed(ActionEvent event) {
 		Object origem = event.getSource();
 		
@@ -152,14 +159,14 @@ public class PanelGame extends JFrame implements ActionListener {
 					end = false;
 				}
 				else{
-					//default
+					//Default
 				}
 			}
 		}
 		message = "Draw.";
 		
 		for(line=0;line<3;line++){
-			//Detects if the game is over
+			//Detects if the game has a winner
 			if((grid.getSelection()[line][0]==grid.getSelection()[line][1]&&grid.getSelection()[line][0]==grid.getSelection()[line][2]&&grid.getSelection()[line][0]!="") ||
 				(grid.getSelection()[0][line]==grid.getSelection()[1][line]&&grid.getSelection()[0][line]==grid.getSelection()[2][line]&&grid.getSelection()[0][line]!="") ||
 				(grid.getSelection()[0][0]==grid.getSelection()[1][1]&&grid.getSelection()[0][0]==grid.getSelection()[2][2]&&grid.getSelection()[0][0]!="") ||
@@ -175,7 +182,7 @@ public class PanelGame extends JFrame implements ActionListener {
 				
 			}
 			else{
-				//default
+				//Default
 			}
 		}
 			

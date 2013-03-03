@@ -1,3 +1,6 @@
+/**
+ * This program contains the grid of the game
+ */
 package Jogo_Velha;
 
 public class Grid1 {
